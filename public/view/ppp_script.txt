@@ -1,0 +1,1 @@
+:local validity %validity%; {:if ([/system scheduler find name=$user]="") do={ /system scheduler add name=$user policy="read,write" interval=$validity on-event="/ppp secret %expires% [find name=$user]; /ppp active remove [find name=$user]; /system scheduler remove [find name=$user];";}}
